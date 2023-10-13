@@ -1,3 +1,5 @@
 body{
-    background-color: blue;
+   /* body의 */
+    background-color: rgb(100, 100, 240);
+    /* 배경-색깔: 파랑; */
 }
