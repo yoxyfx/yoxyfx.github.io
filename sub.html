@@ -14,16 +14,12 @@
             <tr> 
                 <th rowspan="4"th colspan="4">하나가 되는 순간, 우리는 오월오일! 매일 소중한 오늘을 노래하는 오월오일입니다.</th>  
             </tr>
-
             
-            </table>   
+           
+            
+        </table>   
         
-        <input type="text" placeholder="-목록검색"/>
-            <select> <!-- select box, combo box-->
-            <option>사이트</option>
-            <option>장르</option>
-            <option>멤버</option>
-            <option>디스코그래피</option>
+       
 
         <hr/>
       
@@ -378,9 +374,20 @@
         </ol>
 
     <hr/>
+    <form>
+        <label for="name_1">아이디</label>
+        <input name="name_1" type="text" placeholder="-기호 없이 입력"/>
+        <label for="name_1">비밀번호</label>
+        <input type="password" />
+        
+        <input onclick="alert('로그인완료');" type="button" value="로그인하기" />
+        
+    </form>
   
      <form>
             <h2>듣고싶은노래는?</h2>
+                    
+            
                 <form>
                     <dl>
                         <dt>삭(SAK)</dt>
@@ -411,24 +418,17 @@
                             </ul>
                         </dd>
                     </dt>
-                        
-                    <dl>
-                        <dt>Run</dt>
-                        <dd>
-                            <ul>
-                                <input type="checkbox"/>Run
-                            </ul>
-                        </dd>
-                    </dl>
-                        
-                    <dl>
-                        <dt>Wish</dt>
-                        <dd>
-                            <ul>
-                                <input type="checkbox"/>Wish
-                            </ul>
-                        </dd>
-                    </dl>
+                    
+                    
+                    <dt>싱글
+                        <select> 
+                        <option>Run</option>
+                        <option>Wish</option>
+                        <option>둘다</option>
+                        <option>없음</option>
+                        </select>
+                    </dt>
+                   
                        
                    
                 </form>
