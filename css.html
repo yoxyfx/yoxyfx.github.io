@@ -159,8 +159,8 @@
                 border-bottom: dashed 2px black;
 
                 margin: 50px;
-                margin 50px 100px; /* 상하 좌우 */
-                margin 0px 50px 100px 150px; 
+                margin: 50px 100px; /* 상하 좌우 */
+                margin: 0px 50px 100px 150px; 
                 /* 위에서 부터 시계방향 */
                 margin-left:0px;
                 margin-right:50px;
@@ -168,14 +168,49 @@
                 margin-bottom:150px;
 
                 padding: 50px;
-                padding 50px 100px; /* 상하 좌우 */
-                padding 0px 50px 100px 150px; 
+                padding: 50px 100px; /* 상하 좌우 */
+                padding: 0px 50px 100px 150px; 
                 /* 위에서 부터 시계방향 */
                 padding-left:0px;
                 padding-right:50px;
                 padding-top:100px;
                 padding-bottom:150px;
+            }
         </style>
         <div id="d8">box model</div>
+
+        <style>
+            #d9{
+                position: absolute; /* 절대적인 */
+                left: 190px;
+                top: 90px;
+            }
+            #d10{
+                position: relative; /* 관계형 */
+                /* relative인 부모는, absolute 자식의 기준이 된다 */
+            }
+        </style>
+
+        
+        <div id="d10">
+            <div id="d9">absolute</div>
+        </div>
+       
+       <style>
+            #d11{
+                position: fixed; /* 고정된 */
+                top: 0px;
+                right: 0px;
+            }
+        </style>
+        <div id="d11">fixed</div>
+
+        <style>
+            #d12{
+                font-family: "Lucida Sans"
+            }
+        </style>
+
+       
     </body>
 </html>
