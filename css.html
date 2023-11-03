@@ -141,5 +141,41 @@
                 <span>span2</span>
             </div>
         </div>
+        <style>
+            body{ font-size:12px; }
+            div{ font-size:12px; }
+            span{ font-size:12px; }
+            body,div,span{ font-size:12px; }
+        </style>
+
+        <style>
+            #d8{
+                width: 200px;
+                height: 200px;
+                border: solid 2px red;
+                border-left: solid 1px blue;
+                border-right: solid 5px green;
+                border-top: dotted 3px pink; 
+                border-bottom: dashed 2px black;
+
+                margin: 50px;
+                margin 50px 100px; /* 상하 좌우 */
+                margin 0px 50px 100px 150px; 
+                /* 위에서 부터 시계방향 */
+                margin-left:0px;
+                margin-right:50px;
+                margin-top:100px;
+                margin-bottom:150px;
+
+                padding: 50px;
+                padding 50px 100px; /* 상하 좌우 */
+                padding 0px 50px 100px 150px; 
+                /* 위에서 부터 시계방향 */
+                padding-left:0px;
+                padding-right:50px;
+                padding-top:100px;
+                padding-bottom:150px;
+        </style>
+        <div id="d8">box model</div>
     </body>
 </html>
