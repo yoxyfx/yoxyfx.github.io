@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <tittle>기말고사</tittle>
+        <meta charset="utf-8"/>
+        <style>
+            header{
+                display:flex;
+                justify-content:space-between;
+                background-color: rgb(40, 96, 218);
+                color: white;
+            }
+            header ul{
+                list-style: none;
+                display:flex;
+            }
+            header li{
+                padding: 0px 10px;/* 간격 띄우기 */
+            }
+            header h1{
+                margin: 4px 0px;
+            }
+            header h1 span{
+                color: rgb(211, 149, 6);
+            }
+            #d1{
+                background-color:yellow;
+                height:30px;
+                transition:background-color 2s,
+                height 2s;
+            }
+            #d1:hover{
+                background-color: blue;
+                height:80px
+            }
+            #main_visual{
+                background-image: url("main_visual.png");
+                padding:100px;
+                color: white;
+                text-align:center;
+                background-size: 100px auto;
+                background-repeat: no-repeat;
+                background-color: black;
+                background-position: 50% 50%;
+                background-size: contain;/* 담기도록 */
+                background-size: cover;/* 씌워지도록 */
+            }
+            #main_visual h2{
+                font-size:40px;
+                letter-spacing:20px;
+                margin: 0px;
+            }
+            #main_visual p{
+                margin: 0px;
+            }
+            header>div>img{
+                margin: 13px 0px;
+            }
+            #content>section:nth-child(1){background-color: rgb(27, 27, 28); }
+            #content>section:nth-child(2){background-color:rgb(68, 68, 68); }
+            #content>section:nth-child(3){background-color: rgb(117, 116, 116); }
+            #content>section:nth-child(4){background-color:  rgb(197, 197, 197); }
+            #content>section>div{
+                display: flex;
+                justify-content: center;
+            }
+            #content>section>div>div{
+                margin: 0px 10px;
+            }
+            #content dt{
+                font-weight:bold;
+            }
+            #content dd{
+                margin: 0px;
+            }
+            h3{
+                margin: 0px;
+                margin-bottom: 30px;
+                color:white;
+                font-weight: normal;
+            }
+            section{
+                padding: 50px;
+            }
+            footer{
+                display: flex;
+                justify-content: space-between;
+                background-color: #333;
+                color: white;
+                padding: 50px;
+            }
+            footer ul{
+                list-style:none;
+                display:flex;
+                padding:0px;
+            }
+            footer li{
+                padding:0px 5px;
+            }
+            footer div:first-child li{
+                border-right: solid 1px lightgray;
+            }
+            footer div:first-child li:last-child{
+                border:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="'wrap">
+            <header>
+                    <h1>MY<span>FOLIO</span></h1>
+                    <ul>
+                        <li>HOME</li>
+                        <li>ABOUT ME</li>
+                        <li>SERVICE</li>
+                        <li>MY WORK</li>
+                        <li>CONTACT ME</li>
+                    </ul>
+            </header>
+            <div id="main_visual">
+                <p>PORTPOLIO</p>
+                <h2>DIGITAL MEDIA DESIGN</h2>
+                <p>Orem ipsum dolor sit amet, consectetur</p>
+                <img src="">
+            </div>
+            <div id="d1">transition</div>
+            <section>
+                <h2>ABOUT ME</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna 
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat 
+                    duis aute irure dolor.
+                </p>
+            </section>
+            <nav>
+                <h2>See Our Works</h2>
+                <ul>
+                    <li>web design</li>
+                    <li>icons</li>
+                    <li>web design</li>
+                    <li>web design</li>
+                </ul>
+                <div></div>
+            </nav>
+            <div id="content">
+            <section>
+                <h3>Web design</h3>
+                <div>
+                    <div>
+                        <img src="img3.png"/>
+                        <dl>
+                            <dt>프로젝트 제목</dt>
+                            <dd>프로젝트 내용</dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <img src="img4.png"/>
+                        <dl>
+                            <dt>프로젝트 제목</dt>
+                            <dd>프로젝트 내용</dd>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h3>Web design</h3>
+                <div>
+                    <div>
+                        <img src="img5.png"/>
+                        <dl>
+                            <dt>프로젝트 제목</dt>
+                            <dd>프로젝트 내용</dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <img src="img6.png"/>
+                        <dl>
+                            <dt>프로젝트 제목</dt>
+                            <dd>프로젝트 내용</dd>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3>Web design</h3>
+                <div>
+                    <div>
+                        <img src="img7.png"/>
+                        <dl>
+                            <dt>프로젝트 제목</dt>
+                            <dd>프로젝트 내용</dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <img src="img8.png"/>
+                        <dl>
+                            <dt>프로젝트 제목</dt>
+                            <dd>프로젝트 내용</dd>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+            
+            <footer>
+                <div>
+                    <ul>
+                        <li>home</li>
+                        <li>about</li>
+                        <li>services</li>
+                        <li>work</li>
+                    </ul>
+                    <p>copyright</p>
+                    <p>discription</p>
+                </div>
+                <div>
+                    <ul>
+                        <li><img src="icon1.png"/></li>
+                        <li><img src="icon2.png"/></li>
+                        <li><img src="icon3.png"/></li>
+                        <li><img src="icon4.png"/></li>
+                        <li><img src="icon5.png"/></li>
+                        <li><img src="icon6.png"/></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
