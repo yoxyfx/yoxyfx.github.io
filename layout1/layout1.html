@@ -7,6 +7,10 @@
             #wrap ul{}
             header ul{}
             #wrap>header>ul{}
+            #wrap{
+                min-width: 1000px;/* 최소 넓이 */
+                max-width: 1920px;/* 최소 넓이 */
+            }
             header ul{
                 list-style: none;
                 display: flex;
@@ -22,6 +26,7 @@
             header{
                 display: flex;
                 justify-content:space-between;/*공간 나눠쓰게*/
+                padding: 5px 50px;
             }
             header h1{
                 margin: 0px;
@@ -40,6 +45,7 @@
                 display: flex;/*가로배치*/
                 justify-content:space-between;
                 background-color: lightgray;
+                padding:5px 50px;
             }
             nav h2{
                 margin: 14px 0px;
@@ -60,6 +66,36 @@
             }
             #content dd{
                 margin: 0px;
+            }
+            h3{
+                margin: 0px;
+                margin-bottom: 30px;
+                color:white;
+                font-weight: normal;
+            }
+            section{
+                padding: 50px;
+            }
+            footer{
+                display: flex;
+                justify-content: space-between;
+                background-color: #333;
+                color: white;
+                padding: 50px;
+            }
+            footer ul{
+                list-style:none;
+                display:flex;
+                padding:0px;
+            }
+            footer li{
+                padding:0px 5px;
+            }
+            footer div:first-child li{
+                border-right: solid 1px lightgray;
+            }
+            footer div:first-child li:last-child{
+                border:none;
             }
         </style>
     </head>
@@ -126,8 +162,70 @@
                         </div>
                     </div>
                 </section>
+                
+                <section>
+                    <h3>Web design</h3>
+                    <div>
+                        <div>
+                            <img src="img5.png"/>
+                            <dl>
+                                <dt>프로젝트 제목</dt>
+                                <dd>프로젝트 내용</dd>
+                            </dl>
+                        </div>
+                        <div>
+                            <img src="img6.png"/>
+                            <dl>
+                                <dt>프로젝트 제목</dt>
+                                <dd>프로젝트 내용</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>Web design</h3>
+                    <div>
+                        <div>
+                            <img src="img7.png"/>
+                            <dl>
+                                <dt>프로젝트 제목</dt>
+                                <dd>프로젝트 내용</dd>
+                            </dl>
+                        </div>
+                        <div>
+                            <img src="img8.png"/>
+                            <dl>
+                                <dt>프로젝트 제목</dt>
+                                <dd>프로젝트 내용</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+
             </div>
-            <footer>footer</footer>
+            
+            <footer>
+                <div>
+                    <ul>
+                        <li>home</li>
+                        <li>about</li>
+                        <li>services</li>
+                        <li>work</li>
+                    </ul>
+                    <p>copyright</p>
+                    <p>discription</p>
+                </div>
+                <div>
+                    <ul>
+                        <li><img src="icon1.png"/></li>
+                        <li><img src="icon2.png"/></li>
+                        <li><img src="icon3.png"/></li>
+                        <li><img src="icon4.png"/></li>
+                        <li><img src="icon5.png"/></li>
+                        <li><img src="icon6.png"/></li>
+                    </ul>
+                </div>
+            </footer>
         </div>
     </body>
 </html>
