@@ -52,9 +52,32 @@
             }
             section{
                 text-align: center;
+                padding: 80px;
             }
             section h3{
                 color: rgb(3,151,77);
+                font-size: 30px;
+            }
+            #content1 ul{
+                display: flex;
+                list-style: none;/* 리스트 옆 동그라미 없애기 */
+                padding: 0px;
+                margin-top: 100px;/*윗쪽 여백*/
+            }
+            #content1 li{
+                border-right: solid 1px gray;
+                padding: 50px;/*사이 공간 만들기*/
+            }
+            #content1 li:last-child{
+                border: none;/* 맨 오른쪽 줄 없애기*/
+            }
+            #content1 dd{
+                margin: 0px;
+            }
+            #content2 ul{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap; /* 유연 -줄바꿈: 줄바꿈 하기 */
             }
         </style>
     </head>
@@ -76,7 +99,7 @@
                 <p>Orem ipsum dolor sit amet, consectetur</p>
                <div class="button">KNOW MORE</div>
             </div>
-            <section>
+            <section id="content1">
                 <h3>ABOUT ME</h3>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
@@ -126,7 +149,24 @@
                     </li>
                 </ul>
             </section>
-            <section>content2</section>
+            <section id="content2">
+                <h3>MY WORK</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                    sed do eiusmod tempor <br /> incididunt ut labore et dolore magna 
+                    aliqua.
+                </p>
+                <ul>
+                    <li><img src="work1.png"/></li>
+                    <li><img src="work2.png"/></li>
+                    <li><img src="work3.png"/></li>
+                    <li><img src="work4.png"/></li>
+                    <li><img src="work5.png"/></li>
+                    <li><img src="work6.png"/></li>
+                    <li><img src="work7.png"/></li>
+                    <li><img src="work8.png"/></li>
+                </ul>
+            </section>
         </div>
     </body>
 </html>
