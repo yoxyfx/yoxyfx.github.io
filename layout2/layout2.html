@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <tittle>layout2</tittle>
+        <title>layout2</title>
         <meta charset="utf-8"/>
         <style>
+            #wrap{
+                min-width: 1000px;
+                max-width: 1920px;
+                margin: 0px auto;
+            }
             header{
                 display:flex;
                 justify-content:space-between;
                 background-color: rgb(10, 202, 125);
                 color: white;
+                padding: 10px 50px;/* 상하 좌우 순*/
             }
             header ul{
                 list-style: none;
@@ -52,11 +58,13 @@
             }
             section{
                 text-align: center;
-                padding: 80px;
             }
             section h3{
                 color: rgb(3,151,77);
                 font-size: 30px;
+            }
+            #content1{
+                padding: 80px;
             }
             #content1 ul{
                 display: flex;
@@ -77,7 +85,19 @@
             #content2 ul{
                 display: flex;
                 flex-direction: row;
-                flex-wrap: wrap; /* 유연 -줄바꿈: 줄바꿈 하기 */
+                flex-wrap: wrap; 
+                /* 유연 -줄바꿈: 줄바꿈 하기 */
+                list-style: none;
+                padding: 0px;
+                margin-top: 100px;
+            }
+            #content2 li{
+                width: 25%; /* 넓이를  1/4 */
+                /* 들어갈 수 있는 공간을 100%로 봤을때 */
+            }
+            #content2 li img{
+                width: 100%; /* 들어갈 수 있는 공간의 25% */
+                display: block;
             }
         </style>
     </head>
