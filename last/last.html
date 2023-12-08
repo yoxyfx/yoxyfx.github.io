@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <tittle>기말고사</tittle>
+        <title>기말고사</title>
         <meta charset="utf-8"/>
         <style>
+             #wrap{
+                min-width: 1000px;
+                max-width: 1920px;
+                margin: 0px auto;
+            }
+            body{
+                background-image: url("back.png");
+            }
             header{
                 display:flex;
                 justify-content:space-between;
@@ -53,17 +61,6 @@
             #main_visual p{
                 margin: 0px;
             }
-            header>div>img{
-                margin: 13px auto;
-            }
-            #content>section:nth-child(1){background-color: rgb(58, 58, 58); }
-            #content>section:nth-child(2){background-color:rgb(68, 68, 68); }
-            #content>section:nth-child(3){background-color: rgb(117, 116, 116); }
-            #content>section:nth-child(4){background-color:  rgb(197, 197, 197); }
-            #content>section>div{
-                display: flex;
-                justify-content: center;
-            }
             #content>section>div>div{
                 margin: 0px 100px;
             }
@@ -81,6 +78,62 @@
             }
             section{
                 padding: 0px;
+            }
+            .short_line{
+                width: 25px;
+                border-top: solid 1px black;
+            }
+            #content{
+                display:flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .content_card{
+                width: 310px;
+                background-color: white;
+                box-shadow: 2px 2px 2px gray;
+                margin: 20px;
+            }
+            .content_card h2{
+                margin-top: 0px;
+            }
+            .content_card>div:last-child{
+                padding: 50px
+            }
+            .content_card>div:first-child{
+                position: relative /*관계적인*/
+                /* relative인 부모는 absolute인 자식의 기준이 된다*/
+            }
+            .content_card img{
+                display:block;
+            }
+            .content_card>div:last-child>div:nth-child(2){
+                color:gray;
+            }
+            .category{
+                background-color: black;
+                color:white;
+                position:absolute;
+                /* 위치지정: 절대적인*/
+                left: 0px;
+                bottom: 0px;
+            }
+            .long_line{
+                border-top: dotted 1px gray;
+                margin: 10px 0px;
+            }
+            .content_card p{
+                margin: 0px;
+            }
+            footer ul{
+                list-style-type:none;
+                display: flex;
+                padding: 0px;
+                justify-content: center;
+            }
+            footer li{
+                padding-right: 20px;
             }
             footer{
                 display: flex;
@@ -120,126 +173,191 @@
                     </ul>
             </header>
             <div id="main_visual">
-                <p>PORTPOLIO</p>
-                <h2>DIGITAL MEDIA DESIGN</h2>
                 <p>2023.03~</p>
-                <img src="">
+                <h2>my portpolio</h2>
+                <p>22361086_임승현</p>
+               <div class="button">scroll down</div>
             </div>
-            <div id="d1">PLANNING</div>
-            <section>
-                <h2>ABOUT ME</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna 
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat 
-                    duis aute irure dolor.
-                </p>
-            </section>
-            <nav>
-                <h2>See Our Works</h2>
-                <ul>
-                    <li>web design</li>
-                    <li>icons</li>
-                    <li>web design</li>
-                    <li>web design</li>
-                </ul>
-                <div></div>
-            </nav>
+            <div id="d1">기획</div>
+           
             <div id="content">
-            <section>
-                <h3>PORTPOLIO</h3>
-                <div>
-                     <div>
-                        <dl>
-                            <dt>PLANNING</dt>
-                            <dd>프로젝트 내용</dd>
-                       </dl>
-                         <img src="img5.png"/>
+                <section class="content_card">
+                    <div>
+                        <img src="card1.png" />
+                        <div class="category">planning</div>
                     </div>
                     <div>
-                        <dl>
-                            <dt>DESIGN</dt>
-                            <dd>프로젝트 내용</dd>
-                        </dl>
-                        <img src="img6.png"/>
+                        <h2>입시생을 위한 콘텐츠</h2>
+                        <div>2023.12.01</div>
+                        <div class="long_line"></div>
+                        <p>
+                            A direct mail kit that announces the Dulux Colour Awards Competition has commenced. A collection of posters showing the famous colours of history, advertises you add your own colours to history.
+                        </p>
+                        <div class="long_line"></div>
+                        <div>Read on</div>
+                    </div>
+                </section>
+                <section class="content_card">
+                    <div>
+                        <img src="card2.png" />
+                        <div class="category">photoshop design</div>
                     </div>
                     <div>
-                        <dl>
-                            <dt>DESIGN</dt>
-                            <dd>프로젝트 내용</dd>
-                        </dl>
-                        <img src="img6.png"/>
+                        <h2>Work Title</h2>
+                        <div>2023.12.01</div>
+                        <div class="long_line"></div>
+                        <p>
+                            A direct mail kit that announces the Dulux Colour Awards Competition has commenced. A collection of posters showing the famous colours of history, advertises you add your own colours to history.
+                        </p>
+                        <div class="long_line"></div>
+                        <div>Read on</div>
+                    </div>
+                </section>
+                <section class="content_card">
+                    <div>
+                        <img src="card3.png" />
+                        <div class="category">photoshop design</div>
                     </div>
                     <div>
-                        <dl>
-                            <dt>DESIGN</dt>
-                            <dd>프로젝트 내용</dd>
-                        </dl>
-                        <img src="img6.png"/>
+                        <h2>Work Title</h2>
+                        <div>2023.12.01</div>
+                        <div class="long_line"></div>
+                        <p>
+                            A direct mail kit that announces the Dulux Colour Awards Competition has commenced. A collection of posters showing the famous colours of history, advertises you add your own colours to history.
+                        </p>
+                        <div class="long_line"></div>
+                        <div>Read on</div>
                     </div>
-                 </div>
-             </section>
-            <section>
-                <h3>PLANNING</h3>
-                <div>
+                </section>
+                <section class="content_card">
                     <div>
-                        <img width="1000px" height="auto" src="기획중간결과물1.png"/>
-                       
-                        <dl>
-                            <dt>1-1중간</dt>
-                            <dd>프로젝트 내용</dd>
-                        </dl>
+                        <img src="card4.png" />
+                        <div class="category">photoshop design</div>
                     </div>
                     <div>
-                        <img width="1000px" height="auto" src="기획중간결과물2.png"/>
-                        <dl>
-                            <dt>프로젝트 제목</dt>
-                            <dd>프로젝트 내용</dd>
-                        </dl>
+                        <h2>Work Title</h2>
+                        <div>2023.12.01</div>
+                        <div class="long_line"></div>
+                        <p>
+                            A direct mail kit that announces the Dulux Colour Awards Competition has commenced. A collection of posters showing the famous colours of history, advertises you add your own colours to history.
+                        </p>
+                        <div class="long_line"></div>
+                        <div>Read on</div>
                     </div>
-                </div>
-            </section>
-            
-            <section>
-                <h3>DESIGN</h3>
-                <div>
+                </section>
+                <section class="content_card">
                     <div>
-                        <img src="img5.png"/>
-
-                        <dl>
-                            <dt>1-1중간</dt>
-                            <dd>프로젝트 내용</dd>
-                        </dl>
+                        <img src="card5.png" />
+                        <div class="category">photoshop design</div>
                     </div>
                     <div>
-                        <img src="img6.png"/>
-                        <dl>
-                            <dt>프로젝트 제목</dt>
-                            <dd>프로젝트 내용</dd>
-                        </dl>
+                        <h2>Work Title</h2>
+                        <div>2023.12.01</div>
+                        <div class="long_line"></div>
+                        <p>
+                            A direct mail kit that announces the Dulux Colour Awards Competition has commenced. A collection of posters showing the famous colours of history, advertises you add your own colours to history.
+                        </p>
+                        <div class="long_line"></div>
+                        <div>Read on</div>
                     </div>
-                </div>
-            </section>
-            <section>
-                <h3>DESIGN</h3>
-                <div>
+                </section>
+                <section class="content_card">
                     <div>
-                        <img src="img7.png"/>
-                        <dl>
-                            <dt>프로젝트 제목</dt>
-                            <dd>프로젝트 내용</dd>
-                        </dl>
+                        <img src="card6.png" />
+                        <div class="category">photoshop design</div>
                     </div>
                     <div>
-                        <img src="img8.png"/>
-                        <dl>
-                            <dt>프로젝트 제목</dt>
-                            <dd>프로젝트 내용</dd>
-                        </dl>
+                        <h2>Work Title</h2>
+                        <div>2023.12.01</div>
+                        <div class="long_line"></div>
+                        <p>
+                            A direct mail kit that announces the Dulux Colour Awards Competition has commenced. A collection of posters showing the famous colours of history, advertises you add your own colours to history.
+                        </p>
+                        <div class="long_line"></div>
+                        <div>Read on</div>
                     </div>
-                </div>
-            </section>
+                </section>
+                <section class="content_card">
+                    <div>
+                        <img src="card7.png" />
+                        <div class="category">photoshop design</div>
+                    </div>
+                    <div>
+                        <h2>Work Title</h2>
+                        <div>2023.12.01</div>
+                        <div class="long_line"></div>
+                        <p>
+                            A direct mail kit that announces the Dulux Colour Awards Competition has commenced. A collection of posters showing the famous colours of history, advertises you add your own colours to history.
+                        </p>
+                        <div class="long_line"></div>
+                        <div>Read on</div>
+                    </div>
+                </section>
+                <section class="content_card">
+                    <div>
+                        <img src="card8.png" />
+                        <div class="category">photoshop design</div>
+                    </div>
+                    <div>
+                        <h2>Work Title</h2>
+                        <div>2023.12.01</div>
+                        <div class="long_line"></div>
+                        <p>
+                            A direct mail kit that announces the Dulux Colour Awards Competition has commenced. A collection of posters showing the famous colours of history, advertises you add your own colours to history.
+                        </p>
+                        <div class="long_line"></div>
+                        <div>Read on</div>
+                    </div>
+                </section>
+                <section class="content_card">
+                    <div>
+                        <img src="card9.png" />
+                        <div class="category">photoshop design</div>
+                    </div>
+                    <div>
+                        <h2>Work Title</h2>
+                        <div>2023.12.01</div>
+                        <div class="long_line"></div>
+                        <p>
+                            A direct mail kit that announces the Dulux Colour Awards Competition has commenced. A collection of posters showing the famous colours of history, advertises you add your own colours to history.
+                        </p>
+                        <div class="long_line"></div>
+                        <div>Read on</div>
+                    </div>
+                </section>
+                <section class="content_card">
+                    <div>
+                        <img src="card10.png" />
+                        <div class="category">photoshop design</div>
+                    </div>
+                    <div>
+                        <h2>Work Title</h2>
+                        <div>2023.12.01</div>
+                        <div class="long_line"></div>
+                        <p>
+                            A direct mail kit that announces the Dulux Colour Awards Competition has commenced. A collection of posters showing the famous colours of history, advertises you add your own colours to history.
+                        </p>
+                        <div class="long_line"></div>
+                        <div>Read on</div>
+                    </div>
+                </section>
+                <section class="content_card">
+                    <div>
+                        <img src="card11.png" />
+                        <div class="category">photoshop design</div>
+                    </div>
+                    <div>
+                        <h2>Work Title</h2>
+                        <div>2023.12.01</div>
+                        <div class="long_line"></div>
+                        <p>
+                            A direct mail kit that announces the Dulux Colour Awards Competition has commenced. A collection of posters showing the famous colours of history, advertises you add your own colours to history.
+                        </p>
+                        <div class="long_line"></div>
+                        <div>Read on</div>
+                    </div>
+                </section>
+            </div>
             
             <footer>
                 <div>
@@ -262,6 +380,7 @@
                         <li><img src="icon6.png"/></li>
                     </ul>
                 </div>
+                
             </footer>
         </div>
     </body>
