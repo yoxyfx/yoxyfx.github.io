@@ -3,9 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>임승현 포트폴리오</title>
+    <style>
+        /* 전체 배경과 기본 텍스트 */
+        body {
+            background-color: #181818; /* Charcoal Black */
+            color: #E5E5E5; /* Light Gray */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* 헤더 스타일 */
+        header {
+            background-color: #24292E; /* Dark Gray */
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #444C56; /* Light Gray Border */
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        /* 로고 및 네비게이션 */
+        .logo {
+            color: #E5E5E5;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #E5E5E5;
+            text-decoration: none;
+            margin-left: 1rem;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #D8B4A0; /* Low Saturation Pink Beige */
+        }
+
+        /* 메인 컨테이너 */
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* 카드 스타일 */
+        .card {
+            background-color: #24292E; /* Dark Gray */
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #444C56;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 제목과 설명 */
+        .card h2 {
+            color: #E5E5E5; /* Light Gray */
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: #6C757D; /* Medium Gray */
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* 버튼 스타일 */
+        .button {
+            background-color: #c93866; /* Low Saturation Pink Beige */
+            color: #181818;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #D8B4A0; /* Slightly Darker Pink Beige */
+        }
+
+        /* 섹션 스타일 */
+        section {
+            padding: 4rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* 섹션별 배경색 */
+        #about {
+            background-color: #24292E; /* Dark Gray */
+        }
+
+        #projects {
+            background-color: #1C2126; /* Darker Gray */
+        }
+
+        #contact {
+            background-color: #2C3138; /* Even Darker Gray */
+        }
+
+        /* 섹션 제목 스타일 */
+        section h2 {
+            color: #E5E5E5;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* 섹션 본문 */
+        section p {
+            color: #6C757D;
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-    임승현의 포트폴리오
+    <!-- 헤더 -->
+    <header>
+        <div class="logo">임승현</div>
+        <nav>
+            <a href="#about">소개</a>
+            <a href="#projects">프로젝트</a>
+            <a href="#contact">연락처</a>
+        </nav>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <div class="container">
+        <section id="about">
+            <h2>성실하고 꾸준히 성장하는 임승현의 포트폴리오</h2>
+            <p>성장과 지속적인 발전을 추구하는 저의 여정을 만나보세요. 백엔드 개발자로서의 경험과 기술을 통해 다양한 문제를 해결하고 있습니다.</p>
+            <button class="button">더 알아보기</button>
+        </section>
+        
+        <section id="projects">
+            <h2>프로젝트</h2>
+            <p>다양한 프로젝트 경험을 통해 성장하고 있으며, 최신 기술을 활용하여 문제를 해결하고 성과를 만들어갑니다. 구체적인 프로젝트 경험을 소개합니다.</p>
+            <button class="button">프로젝트 보기</button>
+        </section>
+
+        <section id="contact">
+            <h2>연락처</h2>
+            <p>더 궁금한 사항이 있으면 언제든지 연락주세요. 아래의 연락처로 문의 가능합니다.</p>
+            <button class="button">연락하기</button>
+        </section>
+    </div>
 </body>
 </html>
