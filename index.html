@@ -15,7 +15,6 @@
             display: flex;
         }
 
-        /* 헤더를 왼쪽에 고정하고, 오른쪽 여백을 조정 */
         header {
             background-color: #24292E; 
             width: 250px;
@@ -33,13 +32,13 @@
 
         .logo a {
             color: #c93866;
-            text-decoration: none; /* 밑줄 제거 */
+            text-decoration: none; 
             font-size: 1.5rem;
             font-weight: bold;
         }
 
         .logo a:hover {
-            color: #D8B4A0; /* 호버 시 색상 변경 */
+            color: #D8B4A0; 
         }
 
         nav a {
@@ -75,9 +74,11 @@
             background-color: #181818;
             height: 30rem;
         }
-        #tech{
+
+        #tech {
             background-color: #1C2126; 
         }
+
         #projects {
             background-color: #181818; 
         }
@@ -104,6 +105,39 @@
             padding-left: 0.5rem; 
         }
 
+        .project-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .project-card {
+            background-color: #24292E;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            color: #E5E5E5;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .project-card a {
+            color: #E5E5E5;
+            text-decoration: none;
+            display: block;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+
         .button {
             background-color: #c93866; 
             color: #181818;
@@ -126,7 +160,7 @@
     <header>
         <div class="logo">
             <a href="#slogan">
-                PORTPOLIO
+                PORTFOLIO
             </a>
         </div>
         <nav>
@@ -153,29 +187,68 @@
                 HTML, CSS, JavaScript와 같은 프론트엔드 기술에 익숙하며, 최근에는 PHP, MySQL, Python을 학습하여 백엔드 역량을 확장하고 있습니다.<br>
                 폭 넓은 경험을 바탕으로 다양한 기술을 통합해 복잡한 문제를 해결하는데 주력하고 있습니다.
             </p>
-            
         </section>
         
         <section id="tech">
             <h2>기술 스택</h2>
             주요: html, css, javascript, 반응형웹, 웹표준, 웹접근성<br>
-            보조: photoshop, ilustrator, figma, premiere, after effect
+            보조: photoshop, illustrator, figma, premiere, after effect
         </section>
         
         <section id="projects">
+            <h4>Project</h4>
             <h2>백엔드</h2>
+            <div class="project-container">
+                <!-- Backend Project Cards -->
+             
+            </div>
+
             <h2>프론트엔드</h2>
-            <a href="https://yoxyfx.github.io/aboutme.github.io/">나의 일대기를 담은 인터랙티브 사이트</a><br>
-            <a href="https://yoxyfx.github.io/fillitup.github.io/">자바스크립트 프로그래밍 미니게임 “Fill it up” 제작</a><br>
-            <a href="https://yoxyfx.github.io/hiro.github.io/">디지털 콘텐츠 제작 히로 안전교육 앱 소개 웹사이트 제작</a><br>
-            <a href="https://yoxyfx.github.io/webfinal.github.io/">고급 웹 퍼블리싱 기말고사 웹사이트 제작</a><br>
-            <a href="https://yoxyfx.github.io/2024webmid.github.io/">고급 웹 퍼블리싱 중간고사 웹사이트 제작</a>
+            <div class="project-container">
+                <!-- Frontend Project Cards -->
+                <div class="project-card">
+                    <a href="https://yoxyfx.github.io/aboutme.github.io/" target="_blank">
+                        <img src="project3-thumbnail.jpg" alt="나의 일대기를 담은 인터랙티브 사이트">
+                        <span></span>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href="https://yoxyfx.github.io/fillitup.github.io/" target="_blank">
+                        <img src="project4-thumbnail.jpg" alt="자바스크립트 프로그래밍 미니게임 'Fill it up' 제작">
+                        <span></span>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="https://yoxyfx.github.io/2024webmid.github.io/" target="_blank">
+                        <img src="project5-thumbnail.jpg" alt="고급 웹 퍼블리싱 중간고사 웹사이트 제작">
+                        <span>고급 웹 퍼블리싱 중간고사 웹사이트 제작</span>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="https://yoxyfx.github.io/hiro.github.io/" target="_blank">
+                        <img src="project1-thumbnail.jpg" alt="히로 안전교육 앱 소개 웹사이트 제작">
+                        <span>히로 안전교육 앱 소개 웹사이트 제작</span>
+                    </a>
+                </div>
+                
+                <div class="project-card">
+                    <a href="https://yoxyfx.github.io/webfinal.github.io/" target="_blank">
+                        <img src="project2-thumbnail.jpg" alt="고급 웹 퍼블리싱 기말고사 웹사이트 제작">
+                        <span>고급 웹 퍼블리싱 기말고사 웹사이트 제작</span>
+                    </a>
+                </div>
+            </div>
+
             <h2>기획</h2>
+            <div class="project-container">
+              
+            
+            </div>
         </section>
 
         <section id="contact">
-            <h2>프로젝트</h2>
-            <p>.</p>
+            <h2>연락처</h2>
             <button class="button">프로젝트 보기</button>
         </section>
     </div>
