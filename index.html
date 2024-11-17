@@ -17,7 +17,7 @@
 
         header {
             background-color: #24292E; 
-            width: 250px;
+            width: 180px;
             height: 100vh;
             padding: 2rem 1rem;
             display: flex;
@@ -55,14 +55,14 @@
         }
 
         .container {
-            margin-left: 280px; 
-            width: calc(100% - 280px);
-        }
-
+    margin-left: 180px; /* 수정된 부분: header width에 맞춰 맞추기 */
+    width: calc(100% - 180px); /* 수정된 부분: 여백을 줄여서 본문 크기 조정 */
+    padding-left: 1rem; /* 좌측 여백을 조금 더 추가하여 깔끔하게 정렬 */
+}
         section {
             padding: 4rem 0;
             margin-bottom: 2rem;
-            padding-left: 1rem; 
+           padding-left: 3rem; 
         }
 
         #slogan {
@@ -106,10 +106,11 @@
 
         .project-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: 1fr;  /* 한 줄에 하나씩 배치 */
     gap: 2rem;
     padding: 2rem;
-    }
+}
+
 
     .project-card {
     background-color: #24292E;
@@ -186,7 +187,7 @@
             <p>
                 끊임없이 성장하고 새로운 도전을 즐기는<br>
                 백엔드 개발자 임승현입니다.<br>
-                HTML, CSS, JavaScript와 같은 프론트엔드 기술에 익숙하며, 최근에는 PHP, MySQL, Python을 학습하여 백엔드 역량을 확장하고 있습니다.<br>
+                HTML, CSS, JavaScript와 같은 프론트엔드 기술과 함께 최근에는 PHP, MySQL, Python을 학습하여 백엔드 역량을 확장하고 있습니다.<br>
                 폭 넓은 경험을 바탕으로 다양한 기술을 통합해 복잡한 문제를 해결하는데 주력하고 있습니다.
             </p>
         </section>
