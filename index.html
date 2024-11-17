@@ -159,34 +159,74 @@
 }
 
 
-    .project-card {
-    background-color: #24292E;
-    width: 100%; 
+
+
+/*
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+*/
+
+.project-card {
+    width: 100%;
     height: 300px;
     border-radius: 8px;
     overflow: hidden;
-    text-align: center;
     color: #E5E5E5;
     transition: transform 0.3s ease;
-    margin: 0; 
+    margin: 0;
+    display: flex; /* 가로로 배치 */
+    align-items: center; /* 세로 중앙 정렬 */
 }
 
-        .project-card:hover {
-            transform: scale(1.05);
-        }
+.project-card a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+    width: 100%; /* 전체 가로 영역을 차지 */
+}
+.project-card img{
+    width: 500px;  /* 이미지 크기 */
+    height: 300px;
+    margin-right: 1rem;  /* 이미지와 설명 사이 간격 */
+}
+.project-image {
+    width: 300px;  /* 이미지 크기 */
+    height: 300px;
+    margin-right: 1rem;  /* 이미지와 설명 사이 간격 */
+}
 
-        .project-card img {
-            width: 100%;
-            height: auto;
-        }
+.project-description {
+    font-size: 1.1rem;
+    color: #E5E5E5;
+    text-align: left; /* 왼쪽 정렬 */
+}
 
-        .project-card a {
-            color: #E5E5E5;
-            text-decoration: none;
-            display: block;
-            padding: 1rem;
-            font-size: 1.1rem;
-        }
+
+
+.project-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 이미지와 텍스트 왼쪽 정렬 */
+    width: 100%;
+}
+
+.project-image {
+    width: 150px;  /* 이미지 크기 */
+    height: auto;
+    margin-right: 1rem;  /* 이미지와 텍스트 사이 간격 */
+}
+
+.project-description {
+    font-size: 1.5rem;
+    color: #E5E5E5;
+    text-align: left; /* 텍스트는 왼쪽 정렬 */
+}
+
+
 
         .button {
             background-color: #c93866; 
@@ -281,14 +321,47 @@
 
             <h2>프론트엔드</h2>
             <div class="project-container">
+                <div class="project-card">
+                    <a href="https://yoxyfx.github.io/aboutme.github.io/" target="_blank">
+                        <div class="project-content">
+                            <img src="img/Asset 1.png" alt="나의 일대기를 담은 인터랙티브 사이트" class="project-image">
+                            <div class="project-description">
+                                <span class="project-title">나의 일대기를 담은 인터랙티브 사이트</span>
+                                <p>일대기를 담은 사이트를 총 9개의 페이지로 구상해서 자바스크립트로 구현하기</p>
+                                <div class="project-details">
+                                    <span class="project-date">2024년 11월</span>
+                                    <div class="project-tech">
+                                        <span>기술 스택: JavaScript, HTML, CSS</span>
+                                    </div>
+                                </div>
+                                <div class="project-tags">
+                                    <span class="tag">자바스크립트</span>
+                                    <span class="tag">인터랙티브</span>
+                                    <span class="tag">웹개발</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
                 <!-- Frontend Project Cards -->
                 <div class="project-card">
                     <a href="https://yoxyfx.github.io/aboutme.github.io/" target="_blank">
-                        <img src="project3-thumbnail.jpg" alt="나의 일대기를 담은 인터랙티브 사이트">
+                        <img src="img/Asset 1.png" alt="나의 일대기를 담은 인터랙티브 사이트">
                         <span></span>
                     </a>
                 </div>
-
+                <div class="project-card">
+                    <a href="https://yoxyfx.github.io/aboutme.github.io/" target="_blank">
+                        <div class="project-content">
+                            <img src="img/Asset 1.png" alt="나의 일대기를 담은 인터랙티브 사이트" class="project-image">
+                            <div class="project-description">
+                                <span>나의 일대기를 담은 인터랙티브 사이트</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
                 <div class="project-card">
                     <a href="https://yoxyfx.github.io/fillitup.github.io/" target="_blank">
                         <img src="project4-thumbnail.jpg" alt="자바스크립트 프로그래밍 미니게임 'Fill it up' 제작">
@@ -315,7 +388,8 @@
                     </a>
                 </div>
             </div>
-
+       
+        
             <h2>기획</h2>
             <div class="project-container">
               
@@ -328,5 +402,10 @@
             <button class="button">깃허브</button>
         </section>
     </div>
+
+
+
+
+
 </body>
 </html>
