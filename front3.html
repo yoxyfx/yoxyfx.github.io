@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
 
-body {
+    <style>
+        body {
             background-color: #181818; 
             color: #E5E5E5; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -54,56 +55,58 @@ body {
         nav a:hover {
             color: #D8B4A0; 
         }
-                section h2, section p {
-    display: block; 
-    text-align: left; 
-    margin-bottom: 1rem;
-    padding-left: 0.5rem;
-}
 
-.container {
-    margin-left: 200px; 
-    width: calc(100% - 180px); 
-    padding-left: 1rem; 
-}
-        section {
-            padding: 4rem 0;
-            margin-bottom: 2rem;
-           padding-left: 3rem; 
-        }
-        .highlight {
-            color: #c93866; 
+        .container {
+            margin-left: 200px; 
+            width: calc(100% - 180px); 
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column; /* 세로 정렬 */
+            gap: 2rem; /* 코드 블록 간격 */
         }
 
-        section p {
-            color: #6C757D;
-            font-size: 1.125rem;
-            line-height: 1.6;
-            padding-left: 0.5rem; 
+        .code-container {
+            position: relative;
         }
-           .button {
-            background-color: #c93866; 
-            color: #181818;
-            padding: 0.6rem 1.2rem;
+
+        pre {
+            background-color: #2D2D2D; /* 어두운 배경색 */
+            color: #FFFFFF; /* 텍스트 색상 */
+            padding: 1rem; /* 내부 여백 */
+            border-radius: 8px; /* 모서리를 둥글게 */
+            overflow-x: auto; /* 가로 스크롤 가능 */
+            font-size: 0.9rem; /* 글씨 크기 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+            margin: 1rem 0; /* 상하 여백 */
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace; /* 코딩 전용 폰트 */
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #c93866;
+            color: #fff;
             border: none;
             border-radius: 4px;
-            font-size: 1rem;
+            padding: 0.5rem 1rem;
             cursor: pointer;
+            font-size: 0.9rem;
             transition: background-color 0.3s;
-            margin-left: 0.5rem; 
         }
 
-        .button:hover {
-            background-color: #D8B4A0; 
+        .copy-btn:hover {
+            background-color: #D8B4A0;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="#slogan">
-                PORTFOLIO
-            </a>
+            <a href="#slogan">PORTFOLIO</a>
         </div>
         <nav>
             <a href="#about">소개</a>
@@ -112,8 +115,50 @@ body {
             <a href="#contact">연락처</a>
         </nav>
     </header>
+    
     <div class="container">
-        php소개
+        <h1>Code Example with Syntax Highlighting</h1>
+
+        <!-- 첫 번째 코드 블록 -->
+        <div class="code-container">
+            <pre>
+                <code class="language-javascript">
+function drawPixel(x, y, color) {
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, pixelSize, pixelSize);
+}
+                </code>
+            </pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+        </div>
+
+        <!-- 두 번째 코드 블록 -->
+        <div class="code-container">
+            <pre>
+                <code class="language-javascript">
+function erasePixel(x, y) {
+    ctx.clearRect(x, y, pixelSize, pixelSize);
+}
+                </code>
+            </pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+        </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+
+    <script>
+        // 복사 기능
+        function copyCode(button) {
+            const codeBlock = button.previousElementSibling.innerText;
+            navigator.clipboard.writeText(codeBlock)
+                .then(() => {
+                    button.textContent = "복사 완료!";
+                    setTimeout(() => button.textContent = "복사", 2000);
+                })
+                .catch(err => console.error("복사 실패:", err));
+        }
+    </script>
 </body>
 </html>

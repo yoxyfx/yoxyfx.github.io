@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio with Syntax Highlighting</title>
+
+    <!-- Prism.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #181818;
+            color: #E5E5E5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            margin: 2rem;
+            padding: 1rem;
+        }
+
+        .code-container {
+            margin-top: 1rem;
+            position: relative;
+        }
+
+        /* 복사 버튼 */
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #c93866;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .copy-btn:hover {
+            background-color: #D8B4A0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Code Example with Syntax Highlighting</h1>
+
+        <div class="code-container">
+            <pre>
+                <code class="language-javascript">
+function drawPixel(x, y, color) {
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, pixelSize, pixelSize);
+}
+                </code>
+            </pre>
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+        </div>
+    </div>
+
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+
+    <script>
+        // 복사 기능
+        function copyCode(button) {
+            const codeBlock = button.previousElementSibling.innerText;
+            navigator.clipboard.writeText(codeBlock)
+                .then(() => {
+                    button.textContent = "복사 완료!";
+                    setTimeout(() => button.textContent = "복사", 2000);
+                })
+                .catch(err => console.error("복사 실패:", err));
+        }
+    </script>
+</body>
+</html>
