@@ -134,135 +134,47 @@
         
         <div class="code-container">
             <p class="code-description">
-                <strong> 픽셀 그리기 (drawPixel함수):</strong> 주어진 좌표(<em>x, y</em>)에 픽셀을 색칠합니다.<br>
-                색상은 <em>color</em> 매개변수를 통해 지정됩니다.(사용자의 움직임을 시각적으로 표현하는 데 사용)
+                <strong> 슬라이더 동작:</strong> nextImage()와 prevImage()로 현재 슬라이드 인덱스를 변경.
+                <br>showSlide()로 해당 슬라이드에 active 클래스를 추가하여 표시.
+                <br>querySelector와 classList를 사용해 슬라이더의 활성 상태 관리
             </p>
             <pre>
                 <code class="language-javascript">
-function drawPixel(x, y, color) {
-    ctx.fillStyle = color;
-    ctx.fillRect(x, y, pixelSize, pixelSize);
+let slider = document.querySelector('.slider');
+let slides = document.querySelectorAll('.slider .slide'); 
+let currentIndex = 0;
+
+function showSlide(index) {
+    slides.forEach((slide) => {
+        slide.classList.remove('active'); 
+    });
+    slides[index].classList.add('active'); 
 }
+
+function nextImage() {
+    currentIndex++;
+    if (currentIndex >= slides.length) {
+        currentIndex = 0; 
+    }
+    showSlide(currentIndex);
+}
+
+function prevImage() {
+    currentIndex--;
+    if (currentIndex < 0) {
+        currentIndex = slides.length - 1;
+    }
+    showSlide(currentIndex);
+}
+
+showSlide(currentIndex);
                 </code>
             </pre>
             
             <button class="copy-btn" onclick="copyCode(this)">복사</button>
         </div>
 
-        <!-- 두 번째 코드 블록 -->
-        <div class="code-container">
-            <p class="code-description">
-                <strong>타이머 및 라운드 관리 (countdown 함수):</strong> 게임의 타이머를 관리하며, 시간이 0에 도달하거나 모든 픽셀이 파란색으로 채워지면 라운드를 변경하고  게임을 종료
-                라운드가 진행될수록 캔버스의 크기가 증가하고 픽셀의 크기가 감소하여 난이도가 조절<br>
-            </p>
-            <pre>
-                <code class="language-javascript">
-function countdown() {
-    time--;
-    timeDisplay.textContent = time;
-
-    if (time <= 0) {
-        clearInterval(timerId);
-        playSound(roundEndSound);
-        if (round < totalRounds) {
-            alert('Time\'s up! Moving to the next round.');
-            round++;
-            roundDisplay.textContent = round;
-            roundScores[round - 2] = score; 
-            reset();
-        } else {
-            endGame();
-        }
-    }
-                </code>
-            </pre>
-        
-            <button class="copy-btn" onclick="copyCode(this)">복사</button>
-        </div>
-
-        <div class="code-container">
-            <p class="code-description">
-                <strong>게임 초기화 (reset 함수):</strong> 주어진 좌표(<em>x, y</em>)의 픽셀을 지웁니다.<br>
-                게임을 초기 상태로 되돌리는 기능으로, 시간, 점수, 캔버스 크기 등을 초기화하고 새 게임을 시작할 준비
-            </p>
-            <pre>
-                <code class="language-javascript">
-function erasePixel(x, y) {
-    ctx.clearRect(x, y, pixelSize, pixelSize);
-}
-                </code>
-            </pre>
-        
-            <button class="copy-btn" onclick="copyCode(this)">복사</button>
-        </div>
-
-        <div class="code-container">
-            <p class="code-description">
-                <strong>게임 시작 버튼 (startButton이벤트 리스너):</strong> 사용자가 'startButton'을 클릭하면 게임이 시작됨- 사용자로부터 이름을 입력받고, 환영 메시지를 표시-타이머를 시작하고 게임의 상태를 '시작됨＇으로 설정
-            </p>
-            <pre>
-                <code class="language-javascript">
-function erasePixel(x, y) {
-    ctx.clearRect(x, y, pixelSize, pixelSize);
-}
-                </code>
-            </pre>
-        
-            <button class="copy-btn" onclick="copyCode(this)">복사</button>
-        </div>
-
-        <div class="code-container">
-            <p class="code-description">
-                <strong>키보드 입력 처리 (키보드 이벤트 리스너):</strong> 주사용자의 입력(화살표 키)에 따라 사용자의 위치를 업데이트하고 캔버스에 그림을 그리는 `drawLine` 함수를 호출-스페이스바를 누르면 게임이 초기화됩니다.
-            <pre>
-                <code class="language-javascript">
-document.addEventListener('keydown', function(event) {
-    if (event.key === ' ') {
-        reset();
-        playSound(resetSound);
-    } else {
-        drawLine(event.key);
-    }
-});
-                </code>
-            </pre>
-        
-            <button class="copy-btn" onclick="copyCode(this)">복사</button>
-        </div>
-        
-        <div class="code-container">
-            <p class="code-description">
-                <strong>총 픽셀 수 계산 (getTotalPixels함수):</strong> 캔버스의 가능한 픽셀 수를 계산-사용자가 모든 픽셀을 채웠는지 확인하는 데 사용됩니다.
-                <pre>
-                    <code class="language-javascript">
-const totalPixels = getTotalPixels();
-if (bluePixelCount === totalPixels) {
-    clearInterval(timerId);
-    playSound(roundEndSound);
-    if (round < totalRounds) {
-        alert(round + ' 라운드 종료! 당신의 점수: ' + score);
-        roundScores[round - 1] = score; 
-        round++;
-        roundDisplay.textContent = round;
-        reset();
-    } else {
-        endGame();
-    }
-}
-
-                    </code>
-                </pre>
-                <pre>
-                <code class="language-javascript">
-function getTotalPixels() {
-    return (canvas.width / size) * (canvas.height / size);
-}
-                
-                </code>
-            </pre>
-        
-            <button class="copy-btn" onclick="copyCode(this)">복사</button>
-        </div>
+      
     </div>
     
     
