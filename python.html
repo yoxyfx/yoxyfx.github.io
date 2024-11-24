@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+body {
+            background-color: #181818; 
+            color: #E5E5E5; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+        }
+
+        header {
+            background-color: #24292E; 
+            width: 180px;
+            height: 100vh;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-right: 1px solid #444C56; 
+            z-index: 10;
+        }
+
+        .logo a {
+            color: #c93866;
+            text-decoration: none; 
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo a:hover {
+            color: #D8B4A0; 
+        }
+
+        nav a {
+            color: #E5E5E5;
+            text-decoration: none;
+            margin: 1rem 0;
+            font-size: 1rem;
+            transition: color 0.3s;
+            display: block;
+        }
+
+        nav a:hover {
+            color: #D8B4A0; 
+        }
+                section h2, section p {
+    display: block; 
+    text-align: left; 
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+.container {
+    margin-left: 200px; 
+    width: calc(100% - 180px); 
+    padding-left: 1rem; 
+}
+        section {
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+           padding-left: 3rem; 
+        }
+        .highlight {
+            color: #c93866; 
+        }
+
+        section p {
+            color: #6C757D;
+            font-size: 1.125rem;
+            line-height: 1.6;
+            padding-left: 0.5rem; 
+        }
+           .button {
+            background-color: #c93866; 
+            color: #181818;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 0.5rem; 
+        }
+
+        .button:hover {
+            background-color: #D8B4A0; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#slogan">
+                PORTFOLIO
+            </a>
+        </div>
+        <nav>
+            <a href="#about">소개</a>
+            <a href="#tech">기술 스택</a>
+            <a href="#projects">프로젝트</a>
+            <a href="#contact">연락처</a>
+        </nav>
+    </header>
+    <div class="container">
+        php소개
+    </div>
+</body>
+</html>
