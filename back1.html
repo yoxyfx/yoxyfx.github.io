@@ -3,9 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+
+    <style>
+        body {
+            background-color: #181818; 
+            color: #E5E5E5; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+        }
+
+        header {
+            background-color: #24292E; 
+            width: 180px;
+            height: 100vh;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-right: 1px solid #444C56; 
+            z-index: 10;
+        }
+
+        .logo a {
+            color: #c93866;
+            text-decoration: none; 
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo a:hover {
+            color: #D8B4A0; 
+        }
+
+        nav a {
+            color: #E5E5E5;
+            text-decoration: none;
+            margin: 1rem 0;
+            font-size: 1rem;
+            transition: color 0.3s;
+            display: block;
+        }
+
+        nav a:hover {
+            color: #D8B4A0; 
+        }
+
+        .container {
+            margin-left: 200px; 
+            width: calc(100% - 180px); 
+            padding: 2rem 4rem;
+            display: flex;
+            flex-direction: column; /* 세로 정렬 */
+            gap: 2rem; /* 코드 블록 간격 */
+        }
+        .return-button {
+    margin-top: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #c93866;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 10%; 
+    text-align: center;
+}
+
+.return-button:hover {
+    background-color: #D8B4A0;
+}
+        .code-container {
+            position: relative;
+        }
+
+        pre {
+            background-color: #2D2D2D; /* 어두운 배경색 */
+            color: #FFFFFF; /* 텍스트 색상 */
+            padding: 1rem; /* 내부 여백 */
+            border-radius: 8px; /* 모서리를 둥글게 */
+            overflow-x: auto; /* 가로 스크롤 가능 */
+            font-size: 0.9rem; /* 글씨 크기 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+            margin: 1rem 0; /* 상하 여백 */
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace; /* 코딩 전용 폰트 */
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #c93866;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .copy-btn:hover {
+            background-color: #D8B4A0;
+        }
+
+        .code-description {
+            color: #c3c3c3;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .code-description strong {
+            color: #D8B4A0;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <a href="index.html">PORTFOLIO</a>
+        </div>
+        <nav>
+            <a href="index.html#about">소개</a>
+            <a href="index.html#tech">기술 스택</a>
+            <a href="index.html#projects">프로젝트</a>
+            <a href="index.html#contact">연락처</a>
+        </nav>
+    </header>
     
+    <div class="container">
+        <button class="return-button" onclick="location.href='index.html#projects';">이전으로</button>
+        <h1>과정</h1>
+        <div class="code-container">
+            <p class="code-description">
+                <strong>총 픽셀 수 계산 (getTotalPixels함수):</strong> 캔버스의 가능한 픽셀 수를 계산-사용자가 모든 픽셀을 채웠는지 확인하는 데 사용됩니다.
+                <pre>
+                    <code class="language-javascript">
+const totalPixels = getTotalPixels();
+if (bluePixelCount === totalPixels) {
+    clearInterval(timerId);
+    playSound(roundEndSound);
+    if (round < totalRounds) {
+        alert(round + ' 라운드 종료! 당신의 점수: ' + score);
+        roundScores[round - 1] = score; 
+        round++;
+        roundDisplay.textContent = round;
+        reset();
+    } else {
+        endGame();
+    }
+}
+
+                    </code>
+                </pre>
+                <pre>
+                <code class="language-javascript">
+function getTotalPixels() {
+    return (canvas.width / size) * (canvas.height / size);
+}
+                
+                </code>
+            </pre>
+        
+            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+        </div>
+    </div>
+    
+    
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.previousElementSibling.previousElementSibling.innerText;
+            navigator.clipboard.writeText(codeBlock)
+                .then(() => {
+                    button.textContent = "복사 완료!";
+                    setTimeout(() => button.textContent = "복사", 2000);
+                })
+                .catch(err => console.error("복사 실패:", err));
+        }
+    </script>
 </body>
 </html>
