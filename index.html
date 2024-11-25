@@ -323,6 +323,73 @@
         .button:hover {
             background-color: #D8B4A0; 
         }
+
+
+
+        /* Footer Section */
+#contact {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #e9c46a;
+}
+
+#contact p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info strong {
+    color: #f4a261;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links .button {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #264653;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.social-links .button:hover {
+    background-color: #1e7266;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaaaaa;
+    border-top: 1px solid #444444;
+    padding-top: 10px;
+}
+
     </style>
 </head>
 <body>
@@ -691,10 +758,29 @@
             </div>
         </section>
 
-        <section id="contact">
-            <h2>연락처</h2>
-            <button class="button">깃허브</button>
-        </section>
+        
+
+
+
+        <footer id="contact">
+            <div class="footer-content">
+                <h2>연락처</h2>
+                <p>궁금한 점이 있거나 협업을 원하시면 아래로 연락주세요.</p>
+                <div class="contact-info">
+                    <p><strong>📧 이메일:</strong> yoxyfx@gmail.com</p>
+                    <p><strong>📞 전화:</strong> +82 10-2842-6429</p>
+                    <p><strong>📍 주소:</strong> </p>
+                </div>
+                <div class="social-links">
+                    <button class="button" onclick="window.open('https://github.com/yoxyfx', '_blank');">깃허브</button>
+                    <button class="button" onclick="window.open('', '_blank');">abcd</button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Your Name. All Rights Reserved.</p>
+            </div>
+        </footer>
+        
     </div>
 
 
