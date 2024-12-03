@@ -144,60 +144,53 @@
             <a href="index.html#contact">연락처</a>
         </nav>
     </header>
-    
+ 
     <div class="container">
         <button class="return-button" onclick="location.href='index.html#projects';">이전으로</button>
-        <h1>과정</h1>
-        <div class="code-container">
-            <p class="code-description">
-                <strong>총 픽셀 수 계산 (getTotalPixels함수):</strong> 캔버스의 가능한 픽셀 수를 계산-사용자가 모든 픽셀을 채웠는지 확인하는 데 사용됩니다.
-                <pre>
-                    <code class="language-javascript">
-const totalPixels = getTotalPixels();
-if (bluePixelCount === totalPixels) {
-    clearInterval(timerId);
-    playSound(roundEndSound);
-    if (round < totalRounds) {
-        alert(round + ' 라운드 종료! 당신의 점수: ' + score);
-        roundScores[round - 1] = score; 
-        round++;
-        roundDisplay.textContent = round;
-        reset();
-    } else {
-        endGame();
-    }
-}
-
-                    </code>
-                </pre>
-                <pre>
-                <code class="language-javascript">
-function getTotalPixels() {
-    return (canvas.width / size) * (canvas.height / size);
-}
-                
-                </code>
-            </pre>
-        
-            <button class="copy-btn" onclick="copyCode(this)">복사</button>
+      
+        <h1>과정(python hello world 출력)</h1>
+        <div class="explain">
+            <img src="img/PHP10.png">
+            <img src="img/PHP9.png">
+           
+            <h2>1. 파이썬 설치</h2>
+            <h4>해당 웹사이트에 들어가서 파이썬 다운로드</h4>
+            <h6>Downloads > Windows > "View the full list of downloads" </h6>
+            <img src="img/python0.png">
+            <figure id="og_1680339411791" contenteditable="false" data-ke-type="opengraph" data-ke-align="alignCenter" data-og-type="website" data-og-title="Download Python" data-og-description="The official home of the Python Programming Language" data-og-host="www.python.org" data-og-source-url="https://www.python.org/downloads/" data-og-url="https://www.python.org/downloads/" data-og-image="https://scrap.kakaocdn.net/dn/AvI6P/hyR6PsivKJ/MIh9x6LnULXPkwJusQrTxk/img.png?width=200&amp;height=200&amp;face=0_0_200_200"><div href="https://www.python.org/downloads/" target="_blank" rel="noopener" data-source-url="https://www.python.org/downloads/">
+                <div class="og-image" style="background-image: url('https://scrap.kakaocdn.net/dn/AvI6P/hyR6PsivKJ/MIh9x6LnULXPkwJusQrTxk/img.png?width=200&amp;height=200&amp;face=0_0_200_200');">&nbsp;</div>
+                <div class="og-text">
+                <p class="og-title" data-ke-size="size16">Download Python</p>
+               <!--
+                <p class="og-desc" data-ke-size="size16">The official home of the Python Programming Language</p>
+                <p class="og-host" data-ke-size="size16">www.python.org</p>
+                --> 
+                </div>
+            </div>
+           
         </div>
-    </div>
-    
-    
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+               
 
-    <script>
-        function copyCode(button) {
-            const codeBlock = button.previousElementSibling.previousElementSibling.innerText;
-            navigator.clipboard.writeText(codeBlock)
-                .then(() => {
-                    button.textContent = "복사 완료!";
-                    setTimeout(() => button.textContent = "복사", 2000);
-                })
-                .catch(err => console.error("복사 실패:", err));
-        }
-    </script>
+        <div class="explain">
+            <h2>2. 설치 파일 실행</h2>
+            <h4>Install Now를 눌러 설치</h4>
+            <img src="img/python1.png">
+            <img src="img/python2.png">
+        </div>
+
+
+        <div class="explain">
+            <h2>3. 파이썬 실행 해보기</h2>
+            <h4>윈도우 실행창에서 cmd를 눌러 명령 프롬프트창을 키기</h4>
+            <h4>프롬프트가 켜졌으면 python이라고 치고 엔터</h4>
+            <h6>print("Hello world")  </h6>
+            <img src="img/python3.png">
+            <h6>변외로 print("Hello sh") 입력 시 창 </h6>
+            <img src="img/python4.png">
+        </div>
+            
+    </div>
+     
+      
 </body>
 </html>
