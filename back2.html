@@ -156,13 +156,13 @@
     <div class="container">
         <button class="return-button" onclick="location.href='index.html#projects';">이전으로</button>
       
-        <h1>PHP 설치 과정(~ING)</h1>
+        <h1>MySQL 설치 과정(~ING)</h1>
         <div class="explain">
             
            
-            <h2>1. PHP 설치 파일 다운로드</h2>
+            <h2>1. MySQL Installer 다운로드하기</h2>
             <h4>
-                <a href="http://windows.php.net/download">http://windows.php.net/download</a> 에 접속하여 PHP설치 파일을 다운로드
+                웹 페이지로 <a href="https://downloads.mysql.com/archives/installer/">https://downloads.mysql.com/archives/installer/</a> 이동하여 MySQL Product Archives에서 MySQL Installer를 다운로드
             </h4>
            
             <img src="img/MySQL3.png">
@@ -172,14 +172,20 @@
                
 
         <div class="explain">
-            <h2>2. 설치 파일 실행</h2>
-            <h4>Install Now를 눌러 설치</h4>
+            <h2>2. MySQL 설치하기</h2>
+            <h4>
+                다운로드한 파일을 열어 설치 허용을 해줌<BR>
+                    MySQL Installer 창이 나타나면, 제일 먼저 setup type을 설정하는데 "Custom"을 선택하고 Next를 누룸<br>
+                    설치가 완료되면 Next를 눌러 Product Configuration 단계로 이동<br>
+                    Windows Service에서는 체크가 제대로 잘 되어있는지 확인하면 된다. 이외에 Service Name은 MySQL80을 그대로 사용해도 되고, MySQL로 바꾸어 사용해도 좋다. 완료되었다면 Next를 누룸<br>
+                    Start MySQL Workbench after setup를 체크했다면 바로 아래와 같이 워크벤치가 열림
+            </h4>
           
         </div>
 
 
         <div class="explain">
-            <h2>3. PHP.ini파일 수정</h2>
+            <h2>3. 워크벤치 실행</h2>
             <h4>폴더 안에 php.ini-development 파일을 열어서 내용 수정</h4>
             <h4>
                 라인을 찾아 앞에 ; 표시를 제거<br>
