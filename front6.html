@@ -150,6 +150,31 @@
         <h1>주요 코드</h1>
         <div class="code-container">
             <p class="code-description">
+                <strong> 그리드 방식 (Grid View):</strong> 제품 정보를 **그리드(격자)**와 리스트(목록) 방식으로 표시 가능.
+               
+            </p>
+            <pre>
+                <code class="language-javascript">
+.container .products.grid {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+}
+.container .products.grid .product {
+    width: 30%; 
+    padding: 8px;
+    border: 2px solid #bbb; 
+    border-radius: 10px; 
+}
+                </code>
+         
+            
+            
+        </div>
+
+
+        <div class="code-container">
+            <p class="code-description">
                 <strong> 슬라이더 동작:</strong> nextImage()와 prevImage()로 현재 슬라이드 인덱스를 변경.
                 <br>showSlide()로 해당 슬라이드에 active 클래스를 추가하여 표시.
                 <br>querySelector와 classList를 사용해 슬라이더의 활성 상태 관리
