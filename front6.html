@@ -233,6 +233,14 @@ showSlide(currentIndex);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
 
     <script>
+         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
         function copyCode(button) {
             const codeBlock = button.previousElementSibling.previousElementSibling.innerText;
             navigator.clipboard.writeText(codeBlock)

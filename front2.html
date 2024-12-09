@@ -144,14 +144,14 @@
             <a href="index.html">PORTFOLIO</a>
         </div>
         <nav>
-            <a href="#about">소개</a>
-            <a href="#tech">기술 스택</a>
-            <a href="#projects">스터디</a>
-            <a href="#frontend">프로젝트</a>
-            <a href="#frontend" class="highlighted-link">-프론트엔드</a>
-            <a href="#design" class="highlighted-link">-디자인</a>
-            <a href="#planning" class="highlighted-link">-기획</a>
-            <a href="#contact">연락처</a>
+            <a href="index.html">소개</a>
+            <a href="index.html#tech">기술 스택</a>
+            <a href="index.html#projects">스터디</a>
+            <a href="index.html#frontend">프로젝트</a>
+            <a href="index.html#frontend" class="highlighted-link">-프론트엔드</a>
+            <a href="index.html#design" class="highlighted-link">-디자인</a>
+            <a href="index.html#planning" class="highlighted-link">-기획</a>
+            <a href="index.html#contact">연락처</a>
         </nav>
     </header>
     
@@ -236,6 +236,14 @@ elementsToAnimate.forEach(element => {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
 
     <script>
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
         function copyCode(button) {
             const codeBlock = button.previousElementSibling.previousElementSibling.innerText;
             navigator.clipboard.writeText(codeBlock)
