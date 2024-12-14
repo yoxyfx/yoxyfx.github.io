@@ -172,136 +172,137 @@
         <button class="return-button" onclick="location.href='index.html#projects';">이전으로</button>
         <h1>주요 코드</h1>
 
-        
+        <h2>JavaScript - 원 애니메이션</h2>
         <div class="code-container">
             <p class="code-description">
-                <strong> 픽셀 그리기 (drawPixel함수):</strong> 주어진 좌표(<em>x, y</em>)에 픽셀을 색칠합니다.<br>
-                색상은 <em>color</em> 매개변수를 통해 지정됩니다.(사용자의 움직임을 시각적으로 표현하는 데 사용)
+           
+                <strong> 초기 설정 및 원 객체 생성:</strong> canvas와 ctx를 통해 2D 그래픽 컨텍스트를 초기화<br>
+                화면 크기에 맞춰 canvas 크기를 설정<br>
+                circles 배열은 원 객체를 저장하며, numCircles로 원의 개수를 지정
             </p>
             <pre>
                 <code class="language-javascript">
-function drawPixel(x, y, color) {
-    ctx.fillStyle = color;
-    ctx.fillRect(x, y, pixelSize, pixelSize);
-}
-                </code>
+    const canvas = document.getElementById('circleCanvas');
+    const ctx = canvas.getContext('2d');
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+    
+    const numCircles = 20;
+    let circles = [];
+                                </code>
             </pre>
             
      
         </div>
 
-        <!-- 두 번째 코드 블록 -->
         <div class="code-container">
             <p class="code-description">
-                <strong>타이머 및 라운드 관리 (countdown 함수):</strong> 게임의 타이머를 관리하며, 시간이 0에 도달하거나 모든 픽셀이 파란색으로 채워지면 라운드를 변경하고  게임을 종료
-                라운드가 진행될수록 캔버스의 크기가 증가하고 픽셀의 크기가 감소하여 난이도가 조절<br>
+                <strong>Circle 클래스 정의:</strong> 원의 이동속도 및 방향 조절, 원 위치 업데이트<br>
             </p>
             <pre>
                 <code class="language-javascript">
-function countdown() {
-    time--;
-    timeDisplay.textContent = time;
-
-    if (time <= 0) {
-        clearInterval(timerId);
-        playSound(roundEndSound);
-        if (round < totalRounds) {
-            alert('Time\'s up! Moving to the next round.');
-            round++;
-            roundDisplay.textContent = round;
-            roundScores[round - 2] = score; 
-            reset();
-        } else {
-            endGame();
-        }
+function Circle(x, y) {
+    this.x = x;
+    this.y = y;
+    this.radius = random(10, 30);
+    this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    this.dx = random(-2, 2);
+    this.dy = random(-2, 2);
+    
+    this.draw = () => {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.closePath();
+    };
+    
+    this.update = () => {
+        this.x += this.dx;
+        this.y += this.dy;
+    
+        if (this.x + this.radius > width || this.x - this.radius < 0) this.dx = -this.dx;
+        if (this.y + this.radius > height || this.y - this.radius < 0) this.dy = -this.dy;
+    
+        this.draw();
+    };
     }
+                      
                 </code>
             </pre>
         
       
         </div>
-
+<h2>모드 전환 기능</h2>
         <div class="code-container">
             <p class="code-description">
-                <strong>게임 초기화 (reset 함수):</strong> 주어진 좌표(<em>x, y</em>)의 픽셀을 지웁니다.<br>
-                게임을 초기 상태로 되돌리는 기능으로, 시간, 점수, 캔버스 크기 등을 초기화하고 새 게임을 시작할 준비
+                <strong>어두운 모드와 밝은 모드 전환:</strong> isDarkMode 상태에 따라 배경과 텍스트 색상을 전환
+                <br>버튼 텍스트도 모드에 따라 변경
             </p>
             <pre>
                 <code class="language-javascript">
-function erasePixel(x, y) {
-    ctx.clearRect(x, y, pixelSize, pixelSize);
-}
+const toggleModeButton = document.getElementById('toggleModeButton');
+toggleModeButton.addEventListener('click', () => {
+    isDarkMode = !isDarkMode;
+    document.body.style.backgroundColor = isDarkMode ? 'rgb(239, 180, 180)' : 'lightblue';
+    document.body.style.color = isDarkMode ? 'white' : 'black';
+    canvas.style.backgroundColor = isDarkMode ? 'black' : 'white';
+    toggleModeButton.textContent = isDarkMode ? 'Switch to Mode 2' : 'Switch to Mode 1';
+});
+                    
                 </code>
             </pre>
         
 
         </div>
-
+<h2>퍼즐</h2>
         <div class="code-container">
             <p class="code-description">
-                <strong>게임 시작 버튼 (startButton이벤트 리스너):</strong> 사용자가 'startButton'을 클릭하면 게임이 시작됨- 사용자로부터 이름을 입력받고, 환영 메시지를 표시-타이머를 시작하고 게임의 상태를 '시작됨＇으로 설정
+                <strong>초기 배치:</strong> 
+                setInitialPositions() 함수가 각 퍼즐 조각을 container 내 랜덤 위치에 배치<br>
+                <strong>드래그 앤 드롭:</strong> dragStart: 드래그된 조각의 ID 저장.<br>
+                drop: 마우스 위치에 조각을 이동.<br>
+                dragover: 드롭 이벤트를 허용.<br>
+                <strong>   재시작:</strong> Restart 버튼 클릭 시, 조각이 다시 초기 위치로 배치됩니다.
             </p>
             <pre>
                 <code class="language-javascript">
-function erasePixel(x, y) {
-    ctx.clearRect(x, y, pixelSize, pixelSize);
+const pieces = document.querySelectorAll('.piece:not(#img6)');
+const restartButton = document.getElementById('restart');
+
+function setInitialPositions() {
+    pieces.forEach(piece => {
+        piece.style.left = `${Math.random() * 500}px`;
+        piece.style.top = `${Math.random() * 500}px`;
+    });
 }
+
+function dragStart(event) {
+    event.dataTransfer.setData('text/plain', event.target.id);
+}
+
+function drop(event) {
+    event.preventDefault();
+    const id = event.dataTransfer.getData('text/plain');
+    const piece = document.getElementById(id);
+    piece.style.left = `${event.offsetX - 125}px`;
+    piece.style.top = `${event.offsetY - 125}px`;
+}
+
+document.getElementById('container').addEventListener('dragover', e => e.preventDefault());
+document.getElementById('container').addEventListener('drop', drop);
+restartButton.addEventListener('click', setInitialPositions);
+
+setInitialPositions();
+                    
                 </code>
             </pre>
   
         </div>
 
-        <div class="code-container">
-            <p class="code-description">
-                <strong>키보드 입력 처리 (키보드 이벤트 리스너):</strong> 주사용자의 입력(화살표 키)에 따라 사용자의 위치를 업데이트하고 캔버스에 그림을 그리는 `drawLine` 함수를 호출-스페이스바를 누르면 게임이 초기화됩니다.
-            <pre>
-                <code class="language-javascript">
-document.addEventListener('keydown', function(event) {
-    if (event.key === ' ') {
-        reset();
-        playSound(resetSound);
-    } else {
-        drawLine(event.key);
-    }
-});
-                </code>
-            </pre>
-
-        </div>
-        
-        <div class="code-container">
-            <p class="code-description">
-                <strong>총 픽셀 수 계산 (getTotalPixels함수):</strong> 캔버스의 가능한 픽셀 수를 계산-사용자가 모든 픽셀을 채웠는지 확인하는 데 사용됩니다.
-                <pre>
-                    <code class="language-javascript">
-const totalPixels = getTotalPixels();
-if (bluePixelCount === totalPixels) {
-    clearInterval(timerId);
-    playSound(roundEndSound);
-    if (round < totalRounds) {
-        alert(round + ' 라운드 종료! 당신의 점수: ' + score);
-        roundScores[round - 1] = score; 
-        round++;
-        roundDisplay.textContent = round;
-        reset();
-    } else {
-        endGame();
-    }
-}
-
-                    </code>
-                </pre>
-                <pre>
-                <code class="language-javascript">
-function getTotalPixels() {
-    return (canvas.width / size) * (canvas.height / size);
-}
-                
-                </code>
-            </pre>
-   
-        </div>
-    </div>
+     
     
     
   
