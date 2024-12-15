@@ -178,7 +178,7 @@
     <div class="container">
         <button class="return-button" onclick="location.href='index.html#projects';">이전으로</button>
       
-        <h1>MySQL 설치 과정(~ING)</h1>
+        <h1>MySQL 설치 과정(워크밴치 설치 완료)</h1>
         <div class="explain">
             
            
@@ -195,28 +195,22 @@
         <div class="explain">
             <h2>2. MySQL 설치하기</h2>
             <h4>
-                다운로드한 파일을 열어 설치 허용을 해줌<BR>
-                    MySQL Installer 창이 나타나면, 제일 먼저 setup type을 설정하는데 "Custom"을 선택하고 Next를 누룸<br>
-                    설치가 완료되면 Next를 눌러 Product Configuration 단계로 이동<br>
-                    Windows Service에서는 체크가 제대로 잘 되어있는지 확인하면 된다. 이외에 Service Name은 MySQL80을 그대로 사용해도 되고, MySQL로 바꾸어 사용해도 좋다. 완료되었다면 Next를 누룸<br>
-                    Start MySQL Workbench after setup를 체크했다면 바로 아래와 같이 워크벤치가 열림
+                -다운로드한 파일을 열어 설치 허용으로 전환해줌<BR>
+                   - MySQL Installer 창이 나타나면, 제일 먼저 setup type을 설정하는데 "Custom"을 선택하고 Next를 누룸<br>
+                -설치가 완료되면 Next를 눌러 Product Configuration 단계로 이동<br>
+                    -Windows Service에서는 체크가 제대로 잘 되어있는지 확인하면 된다. 이외에 Service Name은 MySQL80을 그대로 사용해도 되고, MySQL로 바꾸어 사용해도 좋음 완료되었다면 Next를 누룸<br>
+                    -Start MySQL Workbench after setup를 체크했다면 바로 아래 이미지와 같이 워크벤치가 열림
+                   <br><br> <br><br>↓ 워크밴치 설치 완료 이미지
             </h4>
          
             <img src="img/MySQL4.png">
+         
         </div>
 
 
-        <div class="explain">
-            <h2>3. 워크벤치 실행</h2>
-            <h4>폴더 안에 php.ini-development 파일을 열어서 내용 수정</h4>
-            <h4>
-                라인을 찾아 앞에 ; 표시를 제거<br>
-                "./" 부분에는 PHP설치경로/ext 형태로 수정
-            </h4>
-      
-        </div>
-
-        <div class="explain">
+   
+<!--
+          <div class="explain">
             <h2>4. Nginx와 PHP 연동 설정</h2>
             <h4>Nginx가 설치된 경로에서 nginx.conf 파일 열어줌</h4>
            <h4>
@@ -227,7 +221,9 @@
             <h5>(해당 파일 찾는데 어려움이 있어 아직 해당 단계 진행중인 상태)</h5>
             <img src="img/MySQL3.png">
             <img src="img/MySQL5.png">
-        </div>
+        </div>  
+-->
+    
             
     </div>
      <script>
