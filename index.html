@@ -120,7 +120,7 @@
 
 .skills-list span {
     background-color:  #D8B4A0;
-    color: #E5E5E5;
+    color: #1f1f1f;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 1rem;
@@ -142,10 +142,7 @@
     box-sizing: border-box;
 }
 
-.large-card {
-    grid-column: span 3;
-    width: 100%;
-}
+
 
 .skill-card {
     background: #24292E;
@@ -157,12 +154,19 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
-
+.large-card {
+    grid-column: span 3;
+    width: 100%;
+}
 .skill-card h3 {
-    color: #c93866;
+    color: #D8B4A0;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
+.large-card h3 {
+    color: #c93866; 
+}
+
 
 .skill-card p {
     color: #6C757D;
@@ -467,11 +471,14 @@
 
 .social-links {
     margin-top: 20px;
+    display: flex; /* Flexbox를 사용하여 버튼 정렬 */
+    justify-content: center; /* 버튼들을 가로로 가운데 정렬 */
+    gap: 20px; /* 버튼 간 간격 */
 }
 
 .social-links .button {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0; /* Flexbox 사용 시 margin 제거 */
     padding: 10px 20px;
     font-size: 16px;
     font-weight: 600;
@@ -548,7 +555,9 @@
             <a href="index.html">
                 PORTFOLIO
             </a>
-            <h4>신입 백엔드 개발자
+            <h4>
+                <span class="highlight">성장 도전</span>하는
+                <br> 백엔드 개발자
                 <br> <span class="highlight">임승현</span> 입니다.
             </h4>
             
@@ -621,7 +630,7 @@
             <div id="skills" class="skills-section">
                 <h2>기술 설명</h2>
                 <div class="skills-grid">
-                    <!-- 첫 줄: 두 개 카드 -->
+                 
                     <div class="skill-card large-card">
                         <h3>Python</h3>
                         <p>프로그램 설치 및 현재 공부 중, Hello world 출력</p>
@@ -1069,11 +1078,10 @@
                     <p><strong>📞 전화:</strong> +82 10-2842-6429</p>
                 </div>
                 <div class="social-links">
-                    <button class="button" onclick="window.open('https://github.com/yoxyfx', '_blank');">Github</button>
-                    <button class="button" onclick="window.open('file/이력서.pdf','_blank');">이력서, 자기소개서</button>
-                
+                    <button class="button" onclick="openGithub(event)">Github</button>
+                    <button class="button" onclick="openResume(event)">이력서, 자기소개서</button>
                 </div>
-            </div>
+                
             <div class="footer-bottom">
                 <p>© 2024 Seunghyun Im. All Rights Reserved.</p>
             </div>
@@ -1081,7 +1089,17 @@
         
     </div>
 
+    <script>
+           function openGithub(event) {
+        event.preventDefault(); 
+        window.open('https://github.com/yoxyfx', '_blank');
+    }
 
+    function openResume(event) {
+        event.preventDefault();  
+        window.open('file/이력서.pdf', '_blank');
+    }
+    </script>
 
 
 
