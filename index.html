@@ -438,6 +438,7 @@
 
         /* Footer Section */
 #contact {
+    position: relative;
     background-color: #181818;
     color: #ffffff;
     padding: 40px 20px;
@@ -445,6 +446,7 @@
 }
 
 #contact h2 {
+    position: relative;
     font-size: 24px;
     margin-bottom: 15px;
     color: #e9c46a;
@@ -470,6 +472,7 @@
 }
 
 .social-links {
+    position: relative;
     margin-top: 20px;
     display: flex; /* Flexbox를 사용하여 버튼 정렬 */
     justify-content: center; /* 버튼들을 가로로 가운데 정렬 */
@@ -477,6 +480,7 @@
 }
 
 .social-links .button {
+    position: relative;
     display: inline-block;
     margin: 0; /* Flexbox 사용 시 margin 제거 */
     padding: 10px 20px;
@@ -1065,41 +1069,41 @@
             </div>
         </section>
 
-        <a href="file/이력서.pdf" target="_blank">
+  
 
 
 
-        <footer id="contact">
-            <div class="footer-content">
-                <h2>연락처</h2>
-                <p>끊임없이 성장하며 새로운 것들을 개발합니다.</p>
-                <div class="contact-info">
-                    <p><strong>📧 이메일:</strong> yoxyfx@gmail.com</p>
-                    <p><strong>📞 전화:</strong> +82 10-2842-6429</p>
+            <footer id="contact">
+                <div class="footer-content">
+                    <h2>연락처</h2>
+                    <p>끊임없이 성장하며 새로운 것들을 개발합니다.</p>
+                    <div class="contact-info">
+                        <p><strong>📧 이메일:</strong> yoxyfx@gmail.com</p>
+                        <p><strong>📞 전화:</strong> +82 10-2842-6429</p>
+                    </div>
+                    <div class="social-links">
+                        <button class="button" onclick="openGithub(event)">Github</button>
+                        <button class="button" onclick="openResume(event)">이력서, 자기소개서</button>
+                    </div>
+            
+                    <div class="footer-bottom">
+                        <p>© 2024 Seunghyun Im. All Rights Reserved.</p>
+                    </div>
                 </div>
-                <div class="social-links">
-                    <button class="button" onclick="openGithub(event)">Github</button>
-                    <button class="button" onclick="openResume(event)">이력서, 자기소개서</button>
-                </div>
-                
-            <div class="footer-bottom">
-                <p>© 2024 Seunghyun Im. All Rights Reserved.</p>
-            </div>
-        </footer>
-        
-    </div>
-
-    <script>
-           function openGithub(event) {
-        event.preventDefault(); 
-        window.open('https://github.com/yoxyfx', '_blank');
-    }
-
-    function openResume(event) {
-        event.preventDefault();  
-        window.open('file/이력서.pdf', '_blank');
-    }
-    </script>
+            </footer>
+            
+            <script>
+                function openGithub(event) {
+                    event.preventDefault(); // 기본 동작 방지 (예: 폼 제출 등)
+                    window.open('https://github.com/yoxyfx', '_blank'); // 링크 새 탭에서 열기
+                }
+            
+                function openResume(event) {
+                    event.preventDefault(); // 기본 동작 방지
+                    window.open('file/이력서.pdf', '_blank'); // 이력서 PDF 파일 열기
+                }
+            </script>
+            
 
 
 
