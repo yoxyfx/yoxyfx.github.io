@@ -175,44 +175,43 @@
         <h1>주요 코드</h1>
         <div class="code-container">
             <p class="code-description">
-                <strong> 슬라이더 동작:</strong> nextImage()와 prevImage()로 현재 슬라이드 인덱스를 변경.
-                <br>showSlide()로 해당 슬라이드에 active 클래스를 추가하여 표시.
+                <strong> 슬라이더 동작:</strong> nextImage()와 prevImage()로 현재 슬라이드 인덱스를 변경
+                <br>showSlide()로 해당 슬라이드에 active 클래스를 추가하여 표시
                 <br>querySelector와 classList를 사용해 슬라이더의 활성 상태 관리
             </p>
             <pre>
                 <code class="language-javascript">
-let slider = document.querySelector('.slider');
-let slides = document.querySelectorAll('.slider .slide'); 
-let currentIndex = 0;
 
-function showSlide(index) {
-    slides.forEach((slide) => {
-        slide.classList.remove('active'); 
-    });
-    slides[index].classList.add('active'); 
-}
+    let slider = document.querySelector('.slider');
+    let slides = document.querySelectorAll('.slider .slide'); 
+    let currentIndex = 0;
 
-function nextImage() {
-    currentIndex++;
-    if (currentIndex >= slides.length) {
-        currentIndex = 0; 
+    function showSlide(index) {
+        slides.forEach((slide) => {
+            slide.classList.remove('active'); 
+        });
+        slides[index].classList.add('active'); 
     }
-    showSlide(currentIndex);
-}
 
-function prevImage() {
-    currentIndex--;
-    if (currentIndex < 0) {
-        currentIndex = slides.length - 1;
+    function nextImage() {
+        currentIndex++;
+        if (currentIndex >= slides.length) {
+            currentIndex = 0; 
+        }
+        showSlide(currentIndex);
     }
-    showSlide(currentIndex);
-}
 
-showSlide(currentIndex);
+    function prevImage() {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = slides.length - 1;
+        }
+        showSlide(currentIndex);
+    }
+
+    showSlide(currentIndex);
                 </code>
             </pre>
-            
-            
         </div>
 
       

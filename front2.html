@@ -182,24 +182,25 @@
             </p>
             <pre>
                 <code class="language-javascript">
-document.querySelector('.fixed-button').addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+
+    document.querySelector('.fixed-button').addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
                 </code>
             </pre>
-          
         </div>
 
         <!-- 두 번째 코드 블록 -->
         <div class="code-container">
             <p class="code-description">
-                <strong>setTimeout(), IntersectionObserver:</strong> 게setTimeout()을 사용하여 각 이미지를 순차적으로 등장시키는 효과를 구현'
+                <strong>setTimeout(), IntersectionObserver:</strong> setTimeout()을 사용하여 각 이미지를 순차적으로 등장시키는 효과를 구현
                 <br>IntersectionObserver를 사용해 이미지들이 화면에 보일 때 애니메이션을 시작
                 <br>.image-container2 img 섹션의 이미지를 300ms 간격으로 차례대로 나타나도록 설정
             </p>
             <pre>
                 <code class="language-javascript">
-document.addEventListener("DOMContentLoaded", function () {
+
+    document.addEventListener("DOMContentLoaded", function () {
     const section = document.getElementById("problemsolution");
     const images = document.querySelectorAll(".image-container2 img");
     function revealImages() {
@@ -215,11 +216,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     window.addEventListener("scroll", revealImages);
-});
-                    
+    });        
                 </code>
             </pre>
-
         </div>
 
         <div class="code-container">
@@ -229,21 +228,20 @@ document.addEventListener("DOMContentLoaded", function () {
             </p>
             <pre>
                 <code class="language-javascript">
-const visibilityObserver = new IntersectionObserver((entries) => {
+                    
+    const visibilityObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
         }
     });
-});
-const elementsToAnimate = document.querySelectorAll('.animate');
-elementsToAnimate.forEach(element => {
+    });
+    const elementsToAnimate = document.querySelectorAll('.animate');
+    elementsToAnimate.forEach(element => {
     visibilityObserver.observe(element);
-});
-                    
+    });
                 </code>
-            </pre>
-        
+            </pre>     
         </div>
 
     </div>

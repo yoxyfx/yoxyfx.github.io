@@ -184,6 +184,7 @@
             </p>
             <pre>
                 <code class="language-javascript">
+
     const canvas = document.getElementById('circleCanvas');
     const ctx = canvas.getContext('2d');
     const width = window.innerWidth;
@@ -193,10 +194,8 @@
     
     const numCircles = 20;
     let circles = [];
-                                </code>
+                </code>
             </pre>
-            
-     
         </div>
 
         <div class="code-container">
@@ -205,38 +204,37 @@
             </p>
             <pre>
                 <code class="language-javascript">
-function Circle(x, y) {
+    
+    function Circle(x, y) {
     this.x = x;
     this.y = y;
     this.radius = random(10, 30);
     this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
     this.dx = random(-2, 2);
     this.dy = random(-2, 2);
-    
+
     this.draw = () => {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-        ctx.closePath();
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+    ctx.fillStyle = this.color;
+    ctx.fill();
+    ctx.closePath();
     };
-    
+
     this.update = () => {
-        this.x += this.dx;
-        this.y += this.dy;
-    
-        if (this.x + this.radius > width || this.x - this.radius < 0) this.dx = -this.dx;
-        if (this.y + this.radius > height || this.y - this.radius < 0) this.dy = -this.dy;
-    
-        this.draw();
+    this.x += this.dx;
+    this.y += this.dy;
+
+    if (this.x + this.radius > width || this.x - this.radius < 0) this.dx = -this.dx;
+    if (this.y + this.radius > height || this.y - this.radius < 0) this.dy = -this.dy;
+
+    this.draw();
     };
-    }
-                      
+    }               
                 </code>
             </pre>
-        
-      
         </div>
+
 <h2>모드 전환 기능</h2>
         <div class="code-container">
             <p class="code-description">
@@ -245,63 +243,60 @@ function Circle(x, y) {
             </p>
             <pre>
                 <code class="language-javascript">
-const toggleModeButton = document.getElementById('toggleModeButton');
-toggleModeButton.addEventListener('click', () => {
+    
+    const toggleModeButton = document.getElementById('toggleModeButton');
+    toggleModeButton.addEventListener('click', () => {
     isDarkMode = !isDarkMode;
     document.body.style.backgroundColor = isDarkMode ? 'rgb(239, 180, 180)' : 'lightblue';
     document.body.style.color = isDarkMode ? 'white' : 'black';
     canvas.style.backgroundColor = isDarkMode ? 'black' : 'white';
     toggleModeButton.textContent = isDarkMode ? 'Switch to Mode 2' : 'Switch to Mode 1';
-});
-                    
+    });    
                 </code>
             </pre>
-        
-
         </div>
 <h2>퍼즐</h2>
         <div class="code-container">
             <p class="code-description">
                 <strong>초기 배치:</strong> 
                 setInitialPositions() 함수가 각 퍼즐 조각을 container 내 랜덤 위치에 배치<br>
-                <strong>드래그 앤 드롭:</strong> dragStart: 드래그된 조각의 ID 저장.<br>
-                drop: 마우스 위치에 조각을 이동.<br>
-                dragover: 드롭 이벤트를 허용.<br>
-                <strong>   재시작:</strong> Restart 버튼 클릭 시, 조각이 다시 초기 위치로 배치됩니다.
+                <strong>드래그 앤 드롭:</strong> dragStart 드래그된 조각의 ID 저장<br>
+                drop: 마우스 위치에 조각을 이동<br>
+                dragover: 드롭 이벤트를 허용<br>
+                <strong>   재시작:</strong> Restart 버튼 클릭 시, 조각이 다시 초기 위치로 배치됨
             </p>
             <pre>
                 <code class="language-javascript">
-const pieces = document.querySelectorAll('.piece:not(#img6)');
-const restartButton = document.getElementById('restart');
 
-function setInitialPositions() {
+    const pieces = document.querySelectorAll('.piece:not(#img6)');
+    const restartButton = document.getElementById('restart');
+
+    function setInitialPositions() {
     pieces.forEach(piece => {
         piece.style.left = `${Math.random() * 500}px`;
         piece.style.top = `${Math.random() * 500}px`;
     });
-}
+    }
 
-function dragStart(event) {
+    function dragStart(event) {
     event.dataTransfer.setData('text/plain', event.target.id);
-}
+    }
 
-function drop(event) {
+    function drop(event) {
     event.preventDefault();
     const id = event.dataTransfer.getData('text/plain');
     const piece = document.getElementById(id);
     piece.style.left = `${event.offsetX - 125}px`;
     piece.style.top = `${event.offsetY - 125}px`;
-}
+    }
 
-document.getElementById('container').addEventListener('dragover', e => e.preventDefault());
-document.getElementById('container').addEventListener('drop', drop);
-restartButton.addEventListener('click', setInitialPositions);
+    document.getElementById('container').addEventListener('dragover', e => e.preventDefault());
+    document.getElementById('container').addEventListener('drop', drop);
+    restartButton.addEventListener('click', setInitialPositions);
 
-setInitialPositions();
-                    
+    setInitialPositions();      
                 </code>
             </pre>
-  
         </div>
 
      

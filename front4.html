@@ -178,52 +178,50 @@
         <div class="code-container">
             <p class="code-description">
                 <strong> DOMContentLoaded 이벤트:</strong> 
-                <br>JavaScript가 DOM에 접근할 준비가 되었음을 알려주기 때문에, 드래그 기능을 활성화하는 코드를 실행 
+                <br>JavaScript가 DOM에 접근할 준비가 되었음을 알려주기 때문에 드래그 기능을 활성화하는 코드를 실행 
             </p>
             <pre>
                 <code class="language-javascript">
-document.addEventListener('DOMContentLoaded', (event) => { ... });
 
+    document.addEventListener('DOMContentLoaded', (event) => { ... });
                 </code>
             </pre>
-            
-   
         </div>
 
-        <!-- 두 번째 코드 블록 -->
+    
         <div class="code-container">
             <p class="code-description">
                 <strong>mousedown:</strong> 드래그가 시작될 때 마우스 클릭 위치를 캡처하여, 그 위치를 기준으로 요소를 이동시키는 데 사용
             </p>
             <pre>
                 <code class="language-javascript">
-draggable.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    offsetX = e.clientX - draggable.getBoundingClientRect().left;
-    offsetY = e.clientY - draggable.getBoundingClientRect().top;
-    draggable.style.cursor = 'grabbing'; 
-});
+
+    draggable.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - draggable.getBoundingClientRect().left;
+        offsetY = e.clientY - draggable.getBoundingClientRect().top;
+        draggable.style.cursor = 'grabbing'; 
+    });
                 </code>
             </pre>
-
         </div>
 
         <div class="code-container">
             <p class="code-description">
-                <strong>mousemove 이벤트:</strong> 우스를 움직일 때마다 발생하는 이벤트입니다. 사용자가 마우스를 움직일 때마다 드래그 중인 요소의 위치를 갱신하여 실시간으로 이동
+                <strong>mousemove 이벤트:</strong> 우스를 움직일 때마다 발생하는 이벤트 - 사용자가 마우스를 움직일 때마다 드래그 중인 요소의 위치를 갱신하여 실시간으로 이동
                 <br>isDragging이 true일 때만 드래그가 진행되도록 조건을 추가하고, e.clientX와 e.clientY를 사용해 새로운 위치를 계산하여 요소를 이동
             </p>
             <pre>
                 <code class="language-javascript">
-document.addEventListener('mousemove', (e) => {
-    if (isDragging) {
-        draggable.style.left = `${e.clientX - offsetX}px`;
-        draggable.style.top = `${e.clientY - offsetY}px`;
-    }
-});
+
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            draggable.style.left = `${e.clientX - offsetX}px`;
+            draggable.style.top = `${e.clientY - offsetY}px`;
+        }
+    });
                 </code>
             </pre>
-        
         </div>
 
         <div class="code-container">
@@ -232,15 +230,13 @@ document.addEventListener('mousemove', (e) => {
             </p>
             <pre>
                 <code class="language-javascript">
-draggable.style.left = `${e.clientX - offsetX}px`;
-draggable.style.top = `${e.clientY - offsetY}px`;
-                    
+
+    draggable.style.left = `${e.clientX - offsetX}px`;
+    draggable.style.top = `${e.clientY - offsetY}px`;
                 </code>
             </pre>
- 
         </div>
 
-        
     </div>
     
     
