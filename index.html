@@ -490,6 +490,49 @@
     border-top: 1px solid #444444;
     padding-top: 10px;
 }
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid .large-card {
+        grid-column: span 2;
+    }
+
+    .project-card {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 2rem 1rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    .project-card {
+        margin-bottom: 1rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
 
     </style>
 </head>
